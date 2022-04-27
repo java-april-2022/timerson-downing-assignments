@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.main {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.message {
+    border: 20px solid #b7ebff;
+	background-color: #d0f2ff;
+    height: 500px;
+    padding: 40px;
+    font-style: italic;
+}
+
+.userForm {
+    border: 2px groove black;
+    height: 500px;
+    padding: 20px;
+}
+
+.header {
+	text-align: center;
+}
+
+.footer {
+	margin: 20px;
+	text-align: center;
+}
+

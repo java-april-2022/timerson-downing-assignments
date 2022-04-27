@@ -42,4 +42,19 @@ public class DaikichiController {
 		}
 	}
 
+	@RequestMapping("/omikuji")
+	public String omikuji() {
+		return "Tomorrow, an opportunity will arise, so be sure to be open to new ideas!";
+	}
+	
+	@RequestMapping("/saveInfo")
+	public String saveInfo() {
+		return "redirect:/show";
+	}
+	
+	@RequestMapping("/show")
+	public String showFortune() {
+		return "/omikuji";
+	}
+	
 }
