@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.main {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+h2, h4 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.gold {
+    border: 4px groove black;
+    height: 150px;
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+
+
