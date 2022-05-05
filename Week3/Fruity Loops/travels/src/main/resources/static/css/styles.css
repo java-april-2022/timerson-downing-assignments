@@ -1,0 +1,55 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+table {
+  width: 75%;
+  margin-top: 20px;
+}
+
+h3 {
+	margin-bottom: 10px;
+}
+
+p, button {
+	margin: 5px;
+}
+
+button {
+	color: white;
+	background-color: #01baef;
+}
+
+form {
+	margin-top: 30px;
+}
+
+input {
+	margin: 5px;
+}
+
+th {
+  background-color: #0080ff;
+  color: white;
+}
+
+table, th, td {
+  border: 1px double;
+}
+
+td, th{
+	padding: 10px;
+}
+
+tr:nth-child(odd) {background-color: #f2f2f2;}
+
+
