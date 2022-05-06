@@ -1,48 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <%@ page isErrorPage="true" %>  
 
-
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="/css/styles.css">
-<title>Travels</title>
+<title>Edit Expense</title>
 </head>
-
 <body>
-	<div class=wrapper>
-		<h1>Welcome To Your Travel App</h1>
-
-		<table>
-			<thead>
-				<tr>
-					<th>Expense</th>
-					<th>Vendor</th>
-					<th>Amount</th>
-					<th>Edit</th>
-					<th>Delete</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${allExpenses}" var="expense">
-					<tr>
-						<td><c:out value="${expense.name}"></c:out></td>
-						<td><c:out value="${expense.vendor}"></c:out></td>
-						<td><c:out value="${expense.amount}"></c:out></td>
-						<td><a href="/edit/${expense.id}">edit</a></td>
-						<td><button>Delete</button></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	
+<h1>Edit expense</h1>
+<a href="/">Home</a>
+	<div class="wrapper">
 		<div class=expForm>
-		    <form:form action="/create" method="post" modelAttribute="newExpense">
+		    <form:form action="/update/${expense.id}" method="put" modelAttribute="expense">
 				<h3>Add Travel Expense</h3>
 		    	<p>
 		    	<form:label path="name">Expense:</form:label>
@@ -68,12 +41,10 @@
 		    	<form:textarea path="description"/>
 				</p>
 		    	
-		        <button>Submit Expense</button>
+		        <button>Update Expense</button>
 		    </form:form>
 		</div>
 	</div>
-	
 
 </body>
-
 </html>

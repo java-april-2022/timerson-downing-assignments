@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.codingdojo.travels.models.Expense;
 import com.codingdojo.travels.services.ExpenseService;
@@ -29,7 +31,7 @@ public class HomeController {
 		return "index.jsp";
 	}
 	
-	@PostMapping("/process")
+	@PostMapping("/create")
 	public String process(@Valid @ModelAttribute("newExpense") Expense newExpense, BindingResult results) {
 		if(results.hasErrors()) {
 			return "redirect:/";
@@ -37,5 +39,30 @@ public class HomeController {
 		expenseService.createExpense(newExpense);
 		return "redirect:/";
 	}
+	
+	@GetMapping("/edit/{id}")
+	public String editExpense(@PathVariable Long id, Model model) {
+		Expense expense = expenseService.getExpense(id);
+		model.addAttribute(expense);
+		return "edit.jsp";
+	}
+	
+	@PutMapping("/update/{id}")
+	public String updateExpense(@ModelAttribute("newExpense") Expense expense, @PathVariable Long id) {
+		expenseService.updateExpense(expense);
+		return "redirect:/";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

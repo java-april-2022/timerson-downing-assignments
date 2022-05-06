@@ -23,18 +23,24 @@ public class ExpenseService {
     }
     
     // creates an expense
-    public Expense createExpense(Expense expense) {
-        return expenseRepo.save(expense);
+    public void createExpense(Expense expense) {
+        expenseRepo.save(expense);
     }
     
-    // retrieves expense by id
+    // updates an expense
+    public void updateExpense(Expense expense) {
+        expenseRepo.save(expense);
+    }
+
+    // deletes an expense
+    public void deleteExpense(Long id) {
+        expenseRepo.deleteById(id);
+        return;
+    }
+
+    // gets expense by id
     public Expense getExpense(Long id) {
-        Optional<Expense> optExpense = expenseRepo.findById(id);
-        if(optExpense.isPresent()) {
-            return optExpense.get();
-        } else {
-            return null;
-        }
+    	return expenseRepo.findById(id).orElse(null);
     }	
 
 }
