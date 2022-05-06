@@ -31,11 +31,15 @@
 			<tbody>
 				<c:forEach items="${allExpenses}" var="expense">
 					<tr>
-						<td><c:out value="${expense.name}"></c:out></td>
+						<td><a href="/details/${expense.id}">${expense.name}</a></td>
 						<td><c:out value="${expense.vendor}"></c:out></td>
 						<td><c:out value="${expense.amount}"></c:out></td>
 						<td><a href="/edit/${expense.id}">edit</a></td>
-						<td><button>Delete</button></td>
+						<td>
+						<form:form action="/delete/${expense.id}" method="delete">
+							<button>Delete</button>
+						</form:form>
+						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
